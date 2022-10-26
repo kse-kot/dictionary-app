@@ -11,8 +11,8 @@ export default function Dictionary() {
 	let url = 'https://api.dictionaryapi.dev/api/v2/entries/en/'
 
 	useEffect(() => {
-		searchWord()
-	})
+		searchWord() // eslint-disable-next-line
+	}, [])
 
 	function handleWord(event) {
 		event.preventDefault()
@@ -23,7 +23,6 @@ export default function Dictionary() {
 
 	function searchWord() {
 		axios.get(`${url}${word}`).then((response) => {
-			console.log(response.data[0])
 			updateResults(response.data[0])
 			setLoaded(true)
 		})
