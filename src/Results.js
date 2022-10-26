@@ -2,8 +2,6 @@ import React from 'react'
 import Meaning from './Meaning'
 
 export default function Results(props) {
-	console.log(props.results)
-	console.log(Object.keys(props.results).length)
 	if (Object.keys(props.results).length !== 0) {
 		return (
 			<div className="Results">
