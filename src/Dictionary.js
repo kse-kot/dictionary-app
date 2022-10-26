@@ -12,7 +12,7 @@ export default function Dictionary() {
 
 	useEffect(() => {
 		searchWord()
-	}, [])
+	})
 
 	function handleWord(event) {
 		event.preventDefault()
