@@ -8,7 +8,7 @@ function App() {
 			<header className="App-header">
 				<img src={logo} className="App-logo img-fluid" alt="logo" />
 				<h1>Any word you are concerned with? 🤔</h1>
-				<h2>Let's figure it out!</h2>
+				<h2>Let's start with ...</h2>
 				<Dictionary />
 			</header>
 		</div>
