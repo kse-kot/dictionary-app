@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import Loader from 'react-js-loader'
 import Results from './Results'
 import './Dictionary.css'
 
 export default function Dictionary() {
 	const [word, setWord] = useState('love')
 	const [results, updateResults] = useState({})
+	const [loaded, setLoaded] = useState(false)
 	let url = 'https://api.dictionaryapi.dev/api/v2/entries/en/'
 
 	useEffect(() => {
@@ -15,6 +17,7 @@ export default function Dictionary() {
 	function handleWord(event) {
 		event.preventDefault()
 		console.log(word)
+		setLoaded(false)
 		searchWord()
 	}
 
@@ -22,6 +25,7 @@ export default function Dictionary() {
 		axios.get(`${url}${word}`).then((response) => {
 			console.log(response.data[0])
 			updateResults(response.data[0])
+			setLoaded(true)
 		})
 	}
 
@@ -37,12 +41,25 @@ export default function Dictionary() {
 					className="form-control"
 					placeholder={word}
 					onChange={updateWord}
+					autoFocus
 				/>
 				<input type="submit" className="form-control btn btn-info" />
 			</form>
-			<div>
-				<Results results={results} />
-			</div>
+			{loaded ? (
+				<div>
+					<Results results={results} />
+				</div>
+			) : (
+				<div className="mt-5">
+					<Loader
+						type="spinner-cub"
+						bgColor={'#FFFFFF'}
+						title={'spinner-cub'}
+						color={'#FFFFFF'}
+						size={100}
+					/>
+				</div>
+			)}
 		</div>
 	)
 }
