@@ -20,7 +20,13 @@ export default function Meaning(props) {
 				}
 			})()}
 			{props.meaning.definitions.map(function (definition, index) {
-				return <Definition index={index} definition={definition} />
+				return (
+					<Definition
+						index={index}
+						definition={definition}
+						key={index}
+					/>
+				)
 			})}
 		</div>
 	)
