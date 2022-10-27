@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Loader from 'react-js-loader'
 import Results from './Results'
-import './Dictionary.css'
 
 export default function Dictionary() {
 	const [word, setWord] = useState('love')
 	const [results, updateResults] = useState({})
 	const [loaded, setLoaded] = useState(false)
+	const [error, setError] = useState(false)
 	let url = 'https://api.dictionaryapi.dev/api/v2/entries/en/'
 
 	useEffect(() => {
@@ -22,10 +22,19 @@ export default function Dictionary() {
 	}
 
 	function searchWord() {
-		axios.get(`${url}${word}`).then((response) => {
-			updateResults(response.data[0])
-			setLoaded(true)
-		})
+		axios
+			.get(`${url}${word}`)
+			.then((response) => {
+				setError(false)
+				setLoaded(true)
+				updateResults(response.data[0])
+			})
+			.catch((err) => {
+				// Handle error
+				console.log(err)
+				setLoaded(true)
+				setError(true)
+			})
 	}
 
 	function updateWord(event) {
@@ -45,9 +54,16 @@ export default function Dictionary() {
 				<input type="submit" className="form-control btn btn-info" />
 			</form>
 			{loaded ? (
-				<div>
-					<Results results={results} />
-				</div>
+				error ? (
+					<div className="mt-5">
+						Sorry pal, we couldn't find definitions for the word you
+						were looking for.
+					</div>
+				) : (
+					<div>
+						<Results results={results} />
+					</div>
+				)
 			) : (
 				<div className="mt-5">
 					<Loader

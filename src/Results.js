@@ -1,13 +1,16 @@
 import React from 'react'
 import Meaning from './Meaning'
+import Phonetics from './Phonetics'
 
 export default function Results(props) {
+	console.log('results', props)
 	if (Object.keys(props.results).length !== 0) {
 		return (
 			<div className="Results">
-				<h2>{props.results.word}</h2>
-				<h3>{props.results.phonetic}</h3>
-				<h4>Meanings:</h4>
+				<h2>
+					{props.results.word} - {props.results.phonetic}
+				</h2>
+				<Phonetics phonetics={props.results.phonetics} />
 				<div className="text-start">
 					{props.results.meanings.map(function (meaning, index) {
 						return (

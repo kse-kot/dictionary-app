@@ -17,3 +17,19 @@
 	height: 20vmin;
 	pointer-events: none;
 }
+
+.Dictionary {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.Phonetics button {
+	background-color: transparent;
+	border: none;
+	font-size: 40px;
+	color: cadetblue;
+}
+
+.Phonetics button:hover {
+	color: cornflowerblue;
+}
