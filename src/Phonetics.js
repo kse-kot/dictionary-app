@@ -9,7 +9,7 @@ export default function Phonetics(props) {
 	let audioFound = false
 
 	return (
-		<div className="Phonetics d-flex justify-content-center">
+		<div className="Phonetics col d-flex justify-content-center">
 			{props.phonetics.map(function (phonetic, index) {
 				if (phonetic.audio && !audioFound) {
 					audioFound = true

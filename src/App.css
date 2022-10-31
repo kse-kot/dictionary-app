@@ -2,6 +2,18 @@
 	text-align: center;
 }
 
+.App .logo {
+	height: 20vmin;
+}
+
+.App .logo {
+	transition: transform 0.1s ease-in-out;
+}
+
+.App .logo:hover {
+	transform: rotate(30deg);
+}
+
 .App h1 {
 	font-size: 36px;
 	font-weight: 700;
@@ -13,14 +25,27 @@
 	color: #5a6275;
 }
 
-.App-logo {
-	height: 20vmin;
-	pointer-events: none;
+.App section {
+	background-color: azure;
+	padding: 30px;
+	border-radius: 6px;
+	box-shadow: 0 6px 9px rgb(0 0 0 / 10%);
+	margin: 20px 0;
 }
 
 .Dictionary {
-	max-width: 500px;
+	max-width: 700px;
 	margin: 0 auto;
+}
+
+.Dictionary .description {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.Results .word {
+	font-size: 32px;
+	color: #455a64;
+	font-weight: bold;
 }
 
 .Phonetics button {
@@ -32,4 +57,10 @@
 
 .Phonetics button:hover {
 	color: cornflowerblue;
+}
+
+.Synonyms ul li {
+	list-style: none;
+	background-color: whitesmoke;
+	border-radius: 14px;
 }

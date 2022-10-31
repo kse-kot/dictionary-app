@@ -4,7 +4,7 @@ import Synonyms from './Synonyms'
 
 export default function Meaning(props) {
 	return (
-		<div>
+		<section>
 			<h5>Part of speech: {props.meaning.partOfSpeech}</h5>
 			{(() => {
 				if (
@@ -13,7 +13,6 @@ export default function Meaning(props) {
 				) {
 					return (
 						<div>
-							<strong>Synonyms:</strong>
 							<Synonyms synonyms={props.meaning.synonyms} />
 						</div>
 					)
@@ -28,6 +27,6 @@ export default function Meaning(props) {
 					/>
 				)
 			})}
-		</div>
+		</section>
 	)
 }

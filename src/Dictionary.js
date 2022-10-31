@@ -43,16 +43,21 @@ export default function Dictionary() {
 
 	return (
 		<div className="Dictionary">
-			<form className="row g-3" onSubmit={handleWord}>
-				<input
-					type="search"
-					className="form-control"
-					placeholder={word}
-					onChange={updateWord}
-					autoFocus
-				/>
-				<input type="submit" className="form-control btn btn-info" />
-			</form>
+			<section>
+				<form className="row g-3" onSubmit={handleWord}>
+					<input
+						type="search"
+						className="form-control"
+						placeholder={word}
+						onChange={updateWord}
+						autoFocus
+					/>
+					<input
+						type="submit"
+						className="form-control btn btn-info"
+					/>
+				</form>
+			</section>
 			{loaded ? (
 				error ? (
 					<div className="mt-5">

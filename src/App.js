@@ -6,11 +6,11 @@ function App() {
 	return (
 		<div className="App container-sm">
 			<header className="App-header">
-				<img src={logo} className="App-logo img-fluid" alt="logo" />
+				<img src={logo} className="logo img-fluid" alt="logo" />
 				<h1>Any word you are concerned with? 🤔</h1>
 				<h2>Let's start with ...</h2>
-				<Dictionary />
 			</header>
+			<Dictionary />
 		</div>
 	)
 }
