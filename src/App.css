@@ -3,10 +3,7 @@
 }
 
 .App .logo {
-	height: 20vmin;
-}
-
-.App .logo {
+	height: 15vmin;
 	transition: transform 0.1s ease-in-out;
 }
 
@@ -30,16 +27,39 @@
 	padding: 30px;
 	border-radius: 6px;
 	box-shadow: 0 6px 9px rgb(0 0 0 / 10%);
-	margin: 20px 0;
+	margin-bottom: 20px;
 }
 
 .Dictionary {
-	max-width: 700px;
+	max-width: 1000px;
 	margin: 0 auto;
 }
 
 .Dictionary .description {
 	font-family: 'Montserrat', sans-serif;
+}
+
+.Dictionary .grid-wrapper {
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: 3fr 2fr;
+	grid-template-areas: 'results-bar photos-bar';
+}
+
+.Dictionary .results-bar {
+	grid-area: results-bar;
+}
+
+.Dictionary .photos-bar {
+	grid-area: photos-bar;
+}
+
+.Results .phonetics {
+	padding: 10px;
+}
+
+.Results .phonetics .col {
+	padding: 0;
 }
 
 .Results .word {
@@ -63,4 +83,8 @@
 	list-style: none;
 	background-color: whitesmoke;
 	border-radius: 14px;
+}
+
+.Meaning .partOfSpeech {
+	color: #1e88e5;
 }

@@ -4,8 +4,13 @@ import Synonyms from './Synonyms'
 
 export default function Meaning(props) {
 	return (
-		<section>
-			<h5>Part of speech: {props.meaning.partOfSpeech}</h5>
+		<section className="Meaning">
+			<h5>
+				Part of speech:{' '}
+				<span className="partOfSpeech">
+					{props.meaning.partOfSpeech}
+				</span>
+			</h5>
 			{(() => {
 				if (
 					props.meaning.synonyms &&

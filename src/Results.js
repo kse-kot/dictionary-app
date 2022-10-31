@@ -3,11 +3,10 @@ import Meaning from './Meaning'
 import Phonetics from './Phonetics'
 
 export default function Results(props) {
-	console.log('results', props)
 	if (Object.keys(props.results).length !== 0) {
 		return (
-			<div className="Results">
-				<section className="row">
+			<div className="Results box">
+				<section className="phonetics row mx-0">
 					<div className="col">
 						<div className="word">{props.results.word}</div>
 						<span className="transcription">
